@@ -1,0 +1,57 @@
+!Command: show running-config
+!Time: Mon Dec  3 06:22:29 2018
+
+version 7.3(0)N1(1)
+hostname NX1
+no feature telnet
+
+banner motd %
+LAB device NX1
+%
+
+no ip domain-lookup
+ip domain-name lab.local
+system default switchport shutdown
+vtp mode transparent
+no ip source-route
+vlan 1
+spanning-tree pathcost method long
+spanning-tree port type edge bpduguard default
+vrf context management
+  ip route 0.0.0.0/0 10.0.0.1
+vpc domain 10
+  peer-switch
+  role priority 2
+  system-priority 1
+  peer-keepalive destination 10.0.0.3 source 10.0.0.2
+  delay restore 150
+  peer-gateway
+  delay restore interface-vlan 1
+  ip arp synchronize
+
+interface Vlan1
+
+interface Ethernet1/1
+  no shutdown
+
+interface Ethernet1/2
+  no shutdown
+
+interface Ethernet1/3
+  no shutdown
+
+interface Ethernet1/4
+  no shutdown
+
+interface mgmt0
+  vrf member management
+  ip address 10.0.0.2/24
+clock timezone CET 1 0
+clock summer-time CEST 5 Sun Mar 02:00 5 Sun Oct 03:00 60
+line console
+  exec-timeout 10
+line vty
+  exec-timeout 10
+ip tcp path-mtu-discovery
+logging logfile messages 6
+logging monitor 6
