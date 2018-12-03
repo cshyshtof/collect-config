@@ -3,8 +3,8 @@
     Copy config files to excel
 
 .DESCRIPTION
-    Copy all files from specified directory to an excel file, fill headers with hostname
-    Config files must be with extension .conf, .txt or .log
+    Coppies all config files from specified directory to an excel file, fills headers with hostname
+    Place all config files in defined directory (defult: ./configs/). Files must be .conf, .txt or .log
     
 .NOTES 
     Author: Krzysztof Zaleski (cshyshtof@gmail.com)
