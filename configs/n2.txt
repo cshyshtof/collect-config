@@ -2,7 +2,7 @@
 !Time: Mon Dec  3 06:22:29 2018
 
 version 7.3(0)N1(1)
-hostname NX1
+hostname NX2
 no feature telnet
 
 banner motd %
