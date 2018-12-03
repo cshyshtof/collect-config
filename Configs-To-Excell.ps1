@@ -15,7 +15,7 @@
                 the reference to the original author.
     
 .LINK 
-    http://ccie24081.wordpress.com
+    http://ccie24081.blog
 #>
 
 Clear-Host
